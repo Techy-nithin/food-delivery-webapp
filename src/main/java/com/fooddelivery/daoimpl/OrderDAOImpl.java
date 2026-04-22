@@ -18,20 +18,21 @@ public class OrderDAOImpl implements OrderDAO {
 
         int orderId = 0;
 
-        String sql = """
-            INSERT INTO orders
-            (restaurant_id, delivery_address, payment_method, order_status, total_amount)
-            VALUES (?, ?, ?, ?, ?)
-        """;
+         String sql = """
+                INSERT INTO orders
+                (user_id, restaurant_id, delivery_address, payment_method, order_status, total_amount)
+                VALUES (?, ?, ?, ?, ?, ?)
+                """;
 
         try (Connection con = DBConnection.getConnection();
              PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
-            ps.setInt(1, order.getRestaurantId());
-            ps.setString(2, order.getDeliveryAddress());
-            ps.setString(3, order.getPaymentMethod());
-            ps.setString(4, order.getOrderStatus());
-            ps.setDouble(5, order.getTotalAmount());
+             ps.setInt(1, order.getUserId());
+            ps.setInt(2, order.getRestaurantId());
+            ps.setString(3, order.getDeliveryAddress());
+            ps.setString(4, order.getPaymentMethod());
+            ps.setString(5, order.getOrderStatus());
+            ps.setDouble(6, order.getTotalAmount());
 
             ps.executeUpdate();
 
