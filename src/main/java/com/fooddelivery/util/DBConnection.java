@@ -6,9 +6,12 @@ import java.sql.DriverManager;
 public class DBConnection {
 
     private static final String URL =
-            "jdbc:mysql://localhost:3306/food_delivery";
+            "jdbc:mysql://turntable.proxy.rlwy.net:33453/food_delivery";
+
     private static final String USER = "root";
-    private static final String PASSWORD = "Nithin@20640000";
+
+    private static final String PASSWORD =
+            "icyccqShjrFDoBwTVwBxHAfpwhHdiJuY";
 
     public static Connection getConnection() {
         Connection con = null;
