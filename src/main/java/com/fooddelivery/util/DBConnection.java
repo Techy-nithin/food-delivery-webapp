@@ -5,26 +5,22 @@ import java.sql.DriverManager;
 
 public class DBConnection {
 
+    private static final String URL =
+        "jdbc:mysql://turntable.proxy.rlwy.net:33453/food_delivery";
+
+    private static final String USER = "root";
+
+    private static final String PASSWORD =
+        "icyccqShjrFDoBwTVwBxHAfpwhHdiJuY";
+
     public static Connection getConnection() {
         Connection con = null;
-
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-
-            String host = System.getenv("DB_HOST");
-            String port = System.getenv("DB_PORT");
-            String db = System.getenv("DB_NAME");
-            String user = System.getenv("DB_USER");
-            String password = System.getenv("DB_PASSWORD");
-
-            String url = "jdbc:mysql://" + host + ":" + port + "/" + db;
-
-            con = DriverManager.getConnection(url, user, password);
-
+            con = DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return con;
     }
 }
