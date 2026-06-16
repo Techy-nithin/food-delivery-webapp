@@ -7,6 +7,14 @@
 🚀 A full-stack food delivery web application built using **Java Servlets, JSP, JDBC, and MySQL**.
 This system allows users to browse menus, manage cart, and place orders — simulating real-world platforms like Swiggy/Zomato.
 
+## 🌐 Live Demo
+
+🚀 **Application URL:**
+
+https://food-delivery-webapp-1fok.onrender.com
+
+Experience the live Food Delivery Web Application deployed using Docker and Render.
+
 ---
 
 ## 📸 Screenshots
